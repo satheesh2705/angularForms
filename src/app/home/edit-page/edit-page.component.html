@@ -1,0 +1,23 @@
+<form #myForm="ngForm" (ngSubmit)="handleEditData()">
+  <mat-form-field appearance="fill">
+    <mat-label>Name</mat-label>
+    <input matInput placeholder="Enter Your Name" name="userName" [(ngModel)]="editData.userName" required minlength="4">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Email</mat-label>
+    <input matInput placeholder="Enter Your Email" name="userEmail" [(ngModel)]="editData.userEmail" required minlength="4">
+  </mat-form-field>
+
+  <mat-radio-group name="userType" required [(ngModel)]="editData.userType">
+    <mat-radio-button value="Admin">Admin</mat-radio-button>
+    <mat-radio-button value="User">User</mat-radio-button>
+  </mat-radio-group>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Password</mat-label>
+    <input matInput type="password" placeholder="Enter Your Password" name="userPass" [(ngModel)]="editData.userPass" required minlength="4">
+  </mat-form-field>
+
+  <button mat-flat-button type="submit" [disabled]="myForm.invalid">Register</button>
+</form>
